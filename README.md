@@ -27,3 +27,6 @@ Our services are ideal for:
 
 ## Conclusion
 Our platform is more than just a marketplace; it’s a tool that empowers users to create spaces that truly reflect their tastes and lifestyles. Join us in redefining home design, where your vision comes to life with every click.
+
+backend-structure.js
+
