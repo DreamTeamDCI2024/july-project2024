@@ -1,66 +1,29 @@
 # july-project2024
-backend-structure.js
+# Innovative Online Interior Design Platform
 
-// Backend Structure for Interior Design Platform
+## Introduction
+Welcome to our innovative platform where art meets functionality in interior design. Our website isn’t just an online store; it’s a comprehensive guide and consultant for anyone looking to breathe new life into their spaces.
 
-1. **API Endpoints**
-   - `/api/users`: Gestión de usuarios (clientes y diseñadores).
-     - `POST /register`: Registro de nuevos usuarios.
-     - `POST /login`: Autenticación de usuarios.
-     - `GET /user/profile`: Acceso a perfiles de usuario.
-     - `PUT /user/profile`: Actualización de perfiles de usuario.
-   - `/api/products`: Gestión de productos.
-     - `GET /`: Listar todos los productos.
-     - `POST /`: Crear un nuevo producto (solo diseñadores y proveedores).
-     - `GET /:productId`: Detalles de un producto específico.
-     - `PUT /:productId`: Actualización de producto (solo diseñadores y proveedores).
-     - `DELETE /:productId`: Eliminación de producto (solo diseñadores y proveedores).
-   - `/api/designs`: Gestión de diseños interiores.
-     - `GET /`: Listar diseños.
-     - `POST /`: Crear un nuevo diseño (solo diseñadores).
-     - `GET /:designId`: Ver detalles de un diseño.
-     - `PUT /:designId`: Actualización de un diseño (solo el diseñador creador).
-     - `DELETE /:designId`: Eliminación de un diseño (solo el diseñador creador).
+## Our Concept
+Imagine being able to design your living spaces with expert guidance and a rich gallery of images reflecting various styles—all at your fingertips. Our platform allows users to:
+- Explore artistic and decorative items from associated brands displayed in a virtual gallery.
+- Receive detailed insights about each product by simply hovering over the images, including price, user ratings, and special features (like the name of the artist for handmade items).
 
-2. **Database Schema**
-   - **Users**
-     - id
-     - username
-     - password (hashed)
-     - email
-     - userType (cliente, diseñador, proveedor)
-     - profileDetails (información adicional como biografía, estilo de diseño, etc.)
-   - **Products**
-     - id
-     - name
-     - description
-     - price
-     - categoryId (enlaza con Categories para estilos o tipo de producto)
-     - creatorId (enlaza con Users)
-     - ratings (array de valoraciones)
-   - **Designs**
-     - id
-     - title
-     - description
-     - images (array de imágenes o enlaces a imágenes)
-     - createdBy (enlaza con Users)
-     - productsUsed (array de ids de productos)
-   - **Categories**
-     - id
-     - name
-     - description (opcional)
+## Services Offered
+1. **Product Sales**: A diverse range of artistic and decorative products available for purchase directly through our platform.
+2. **Interior Design Consultation**: Personalized advice on designing interiors based on user preferences and our extensive image gallery.
+3. **Interactive Experience**: Users can interact with the product images to learn more about each item’s specifics, enhancing their shopping and planning experience.
 
-3. **Authentication & Authorization**
-   - Implementar JWT (JSON Web Tokens) para manejar la autenticación y autorización.
-   - Middleware para verificar tokens y roles de usuario en rutas restringidas.
+## Target Audience
+Our services are ideal for:
+- Homeowners seeking to refresh their living spaces.
+- Interior design enthusiasts looking for inspiration.
+- Customers interested in purchasing unique, artisan-made decorative items.
 
-4. **Services Layer**
-   - Clases o funciones de servicio para manejar la lógica de negocio, como:
-     - UserService (crear, obtener y actualizar usuarios)
-     - ProductService (gestionar productos)
-     - DesignService (crear y gestionar diseños)
+## Marketing Slogans - Choose one:
+1. **"Design Your New Life"**: Emphasize the transformative experience of redesigning one’s space.
+2. **"Style Your Space, Define Your World"**: Highlights the personalization aspect of our service.
+3. **"Live Artfully"**: Encourages a lifestyle that appreciates and incorporates art and design.
 
-5. **Server Configuration**
-   - Utilizar un framework como Express.js para configurar el servidor.
-   - Middlewares para logging, manejo de errores, y parsing de body.
-
+## Conclusion
+Our platform is more than just a marketplace; it’s a tool that empowers users to create spaces that truly reflect their tastes and lifestyles. Join us in redefining home design, where your vision comes to life with every click.
