@@ -18,7 +18,7 @@ app.use(express.json({ limit: "50mb", extended: true }));
 app.get('/hello', (req, res) => {
     console.log(req);
 
-    req.setEncoding("Hello");
+    res.send("Hello");
 })
 
 // Listening server
