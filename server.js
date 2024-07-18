@@ -12,8 +12,6 @@ const PORT = process.env.PORT || 4000;
 db();
 app.use(express.json());
 
-// Import The User Route
-app.use("/auth", authRouter);
 
 // Root Entry
 app.get("/", (req, res) => {
