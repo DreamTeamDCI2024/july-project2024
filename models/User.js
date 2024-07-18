@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
+const bcrypt = require("bcryptjs");
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  email: {
+  username: {
     type: String,
     required: true,
   },
@@ -23,35 +24,26 @@ const userSchema = mongoose.Schema({
   },
   street: {
     type: String,
-    default: ""
+    default: "",
   },
   apartment: {
     type: String,
-    default: ""
+    default: "",
   },
   zip: {
     type: String,
-    default: ""
+    default: "",
   },
   city: {
     type: String,
-    default: ""
+    default: "",
   },
   country: {
     type: String,
-    default: ""
-  }
-
+    default: "",
+  },
 });
 
-userSchema.virtual('id').get(function () {
-    return this._id.toHexString();
-});
+const User = mongoose.model("User", userSchema);
 
-userSchema.set('toJson', {
-    virtual:true
-})
-
-const userModel = mongoose.model("user", userSchema);
-
-export default userModel
+module.exports = User;
