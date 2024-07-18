@@ -1,35 +1,25 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+import express from "express";
+import dotenv from "dotenv";
+import db from "./db.js";
+import authRouter from "./routes/authRoutes.js";
 
 dotenv.config();
 
-// Initialize the app
 const app = express();
-
-// PORT
 const PORT = process.env.PORT || 4000;
 
-// Use the json middleware
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
-app.use(express.json({ limit: "50mb", extended: true }));
+// Iinitialized Database Configuration
+db();
+app.use(express.json());
 
-// Paths
-app.get('/hello', (req, res) => {
-    console.log(req);
 
-    res.send("HI");
-})
 
-// Listening server
-mongoose
-    .connect(process.env.CONNECTION_URL)
-    .then(() => {
-        app.listen(PORT, () => {
-            console.log(`Server running on ${PORT}`);
-        });
-    })
-    .catch((error) => console.log(error));
+// Root Entry
+app.get("/", (req, res) => {
+  res.send("Welcome");
+});
 
-console.log('PORT:', process.env.PORT);
-console.log('CONNECTION_URL:', process.env.CONNECTION_URL);
+// Listened to the PORT
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
